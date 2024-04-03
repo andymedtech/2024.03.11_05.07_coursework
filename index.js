@@ -1,4 +1,16 @@
 // Connection to MongoDB from Docker
+
+const connectionToDB = require("./modules/connectionToDB");
+const { run: startHTTPServer } = require("./modules/HTTPServer");
+
+const run = async () => {
+  await connectionToDB();
+  startHTTPServer(8080);
+};
+
+run();
+
+/*
 const fsd_05 = require("./connection");
 // Model of collection
 const postModel = require("./model/post.model");
@@ -67,3 +79,4 @@ const messageModel = require("./model/message.model");
     timestamp: new Date(),
   });
 })();
+*/
