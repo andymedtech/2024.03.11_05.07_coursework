@@ -2,6 +2,7 @@ const profile = require("../models/profile.model");
 
 const getAll = require("./profile/getAll");
 const getByID = require("./profile/getByID");
+const getShortByID = require("./profile/getShortByID");
 const create = require("./profile/create");
 const update = require("./profile/update");
 const remove = require("./profile/remove");
@@ -13,7 +14,9 @@ class ProfileController {
   static async getByID(req, res) {
     getByID(req, res);
   }
-  static async getShortByID(req, res) {}
+  static async getShortByID(req, res) {
+    getShortByID(req, res);
+  }
   static async create(req, res) {
     create(req, res);
   }
