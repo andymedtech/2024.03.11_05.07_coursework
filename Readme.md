@@ -134,3 +134,7 @@
 - Генерация случайного password
 
 ## Результат
+
++ Получить все profile
+	- Postman GET
+	- http://localhost:8080/api/profile

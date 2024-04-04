@@ -8,10 +8,10 @@ const messageRouter = require("./groups/message.route");
 
 const router = new Router();
 
-// router.use("/post", postRouter);
-// router.use("/like", likeRouter);
-// router.use("/comment", commentRouter);
-// router.use("/profile", profileRouter);
-// router.use("/message", messageRouter);
+router.use("/post", postRouter);
+router.use("/like", likeRouter);
+router.use("/comment", commentRouter);
+router.use("/profile", profileRouter);
+router.use("/message", messageRouter);
 
 module.exports = router;

@@ -1,15 +1,14 @@
-// const user = require("../models/user.model");
+const profile = require("../models/profile.model");
 
 class ProfileController {
   static async getAll(req, res) {
-    //     // postman GET http://localhost:8080/api/user
-    //     try {
-    //       const userList = await user.find();
-    //       res.json(userList);
-    //     } catch (e) {
-    //       console.log(e);
-    //       res.json("ERROR");
-    //     }
+    try {
+      const profileList = await profile.find();
+      res.json(profileList);
+    } catch (e) {
+      console.log(e);
+      res.json("ERROR");
+    }
   }
   static async getByID(req, res) {
     //     // postman GET http://localhost:8080/api/user/660d3c2c44a3371b37dd0c7a
