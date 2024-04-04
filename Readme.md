@@ -78,7 +78,7 @@
 	[/:id]					[get]			[getByID]
 - Получить post по ID profile
 	[/profile/:id]	[get]			[getByProfileID]
-- Создать post
++ Создать post
 	[/]							[post]		[create]
 - Изменить post
 	[/]							[put]			[update]
@@ -133,7 +133,16 @@
 ### post
 - Получить post по ID
 - Получить post по ID profile
-- Создать post
++ Создать post						[create]
+	- Postman POST
+	- http://localhost:8080/api/post
+	*
+``` Body raw JSON
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"content": "postContent01"
+}
+```
 - Изменить post
 - Удалить post
 

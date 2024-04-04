@@ -1,4 +1,4 @@
-const profile = require("../models/profile.model");
+// const profile = require("../models/profile.model");
 
 const getAll = require("./profile/getAll");
 const getByID = require("./profile/getByID");
