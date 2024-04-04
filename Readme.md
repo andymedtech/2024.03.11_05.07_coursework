@@ -172,15 +172,6 @@
 	*
 ``` Body raw JSON
 {
-		"id": "660e86b6a00dfd18c8be3484",
-    "surname": "profileSurname01-1",
-    "avatar": "http://profile.avatar01-1.jpg"
+		"id": "660e86b6a00dfd18c8be3484"
 }
 ```
-					[/]							[delete]	[delete]
-
-    //     // postman DELETE http://localhost:8080/api/user
-    //     // Body JSON
-    //     // {
-    //     //   "id": "660d3c2c44a3371b37dd0c7a"
-    //     // }

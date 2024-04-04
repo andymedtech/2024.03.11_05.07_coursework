@@ -61,21 +61,16 @@ class ProfileController {
     }
   }
   static async delete(req, res) {
-    //     // postman DELETE http://localhost:8080/api/user
-    //     // Body JSON
-    //     // {
-    //     //   "id": "660d3c2c44a3371b37dd0c7a"
-    //     // }
-    //     try {
-    //       const { id } = req.body;
-    //       const userData = await user.deleteOne({
-    //         _id: id,
-    //       });
-    //       res.json(userData); // это ответ клиенту
-    //     } catch (e) {
-    //       console.log(e);
-    //       res.json("ERROR");
-    //     }
+    try {
+      const { id } = req.body;
+      const profileData = await profile.deleteOne({
+        _id: id,
+      });
+      res.json(profileData);
+    } catch (e) {
+      console.log(e);
+      res.json("ERROR");
+    }
   }
 }
 
