@@ -4,40 +4,42 @@
 
 ## Выполнить
 
-- Хранение данных в database
++ Хранение данных в database [mongodb://localhost:27017/fsd_05]
++ Collections в database **MongoDB**
+	* [post]			[/models/post.model.js]
+		- _id
+		+ user_id
+		+ content
+		+ timestamp
+	* [like]			[/models/like.model.js]
+		- _id
+		+ user_id
+		+ post_id
+		+ timestamp
+	* [comment]		[/models/comment.model.js]
+		- _id
+		+ user_id
+		+ post_id
+		+ content
+		+ timestamp
+	* [profile]		[/models/profile.model.js]
+		- _id
+		+ name
+		+ surname
+		+ email
+		+ login
+		+ password
+		+ avatar
+	* [message]		[models/message.model.js]
+		- _id
+		+ user_id_from
+		+ user_id_to
+		+ content
+		+ timestamp
 - Применение **CRUD**
 - Использование паттернов и архитектуры **MVC**
 - Авторизация по **JWT**
 - Проверка прав при помощи **middleware**
-- Collections в database **MongoDB**
-	- [post]
-		- _id
-		- user_id
-		- content
-		- timestamp
-	- [like]
-		- _id
-		- user_id
-		- post_id
-		- timestamp
-	- [comment]
-		- _id
-		- user_id
-		- post_id
-		- content
-		- timestamp
-	- [profile]
-		- _id
-		- name
-		- surname
-		- email
-		- password
-	- [message]
-		- _id
-		- user_id_from
-		- user_id_to
-		- timestamp
-		- content
 
 |                |post|like|comment|profile|message|
 |:---------------|:--:|:--:|:-----:|:-----:|:-----:|
