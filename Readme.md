@@ -6,23 +6,35 @@
 
 + Хранение данных в database [mongodb://localhost:27017/fsd_05]
 + Collections в database **MongoDB**
-	* [post]			[/models/post.model.js]
+	* [post]
+						[/models/post.model.js]
+						[/routes/groups/post.route.js]
+						[/post]
 		- _id
 		+ user_id
 		+ content
 		+ timestamp
-	* [like]			[/models/like.model.js]
+	* [like]
+						[/models/like.model.js]
+						[/routes/groups/like.route.js]
+						[/like]
 		- _id
 		+ user_id
 		+ post_id
 		+ timestamp
-	* [comment]		[/models/comment.model.js]
+	* [comment]
+						[/models/comment.model.js]
+						[/routes/groups/comment.route.js]
+						[/comment]
 		- _id
 		+ user_id
 		+ post_id
 		+ content
 		+ timestamp
-	* [profile]		[/models/profile.model.js]
+	* [profile]
+						[/models/profile.model.js]
+						[/routes/groups/profile.route.js]
+						[/profile]
 		- _id
 		+ name
 		+ surname
@@ -30,7 +42,10 @@
 		+ login
 		+ password
 		+ avatar
-	* [message]		[models/message.model.js]
+	* [message]
+						[models/message.model.js]
+						[/routes/groups/message.route.js]
+						[/message]
 		- _id
 		+ user_id_from
 		+ user_id_to
@@ -57,31 +72,65 @@
 
 ## Функционал
 
-- Пост
-	- Создание записи
-		- Возможность лайкать запись
-		- Возможность писать комментарии к записи
-			- *Возможность ставить лайки на комментарии
-			- *Возможность отвечать на комментарии
-	- Получение записи
-		- Получение лайков записи
-		- Получение комментариев записи
-	- Изменение записи
-	- Удаление записи
+- [post]
+					[/post]
+	* Получить post по ID
+					[/:id]					[get]			[getByID]
+	* Получить post по ID profile
+					[/profile/:id]	[get]			[getByProfileID]
+	* Создать post
+					[/]							[post]		[create]
+	* Изменить post
+					[/]							[put]			[update]
+	* Удалить post
+					[/]							[delete]	[delete]
+- [like]
+					[/like]
+	*  Получить like по ID post
+					[/:postID]			[get]			[getByPostID]
+	*  Поставить like post
+					[/]							[post]		[create]
+	*  Удалить like post
+					[/]							[delete]	[delete]
+- [comment]
+					[/comment]
+	* Получить comment по ID post
+					[/:postID]			[get]			[getByPostID]
+	* Создать comment
+					[/]							[post]		[create]
+	* Изменить comment
+					[/]							[put]			[update]
+	* Удалить comment
+					[/]							[delete]	[delete]
+- [profile]
+					[/profile]
+	* Получить все profile
+					[/]							[get]			[getAll]
+	* Получить profile по ID
+					[/:id]					[get]			[getByID]
+	* Получить короткую версию profile по ID
+					[/short/:id]		[get]			[getShortByID]
+	* Создать profile
+					[/]							[post]		[create]
+	* Изменить profile
+					[/]							[put]			[update]
+	* Удалить profile
+					[/]							[delete]	[delete]
+- [message]
+					[/message]
+	* Получить message по fromID post
+					[/:fromID]			[get]		[getFromID]
+	* Получить message по toID post
+					[/:toID]				[get]		[getToID]
+	* Создать message
+					[/]							[post]		[create]
+	
+## Прочий функционал
 
-- Профиль пользователя
-	- Создание профиля
-	- Редактирование профиля
-		- Изменение пароля
-		- Генерация случайного пароля
-	- Удаление профиля
-	- Получение полностью профиля
-	- Получение короткой версии профиля
-
-- Диалоги
-	- Отправка сообщения
-	- Получение сообщений от пользователя
-	- Получение своих сообщений пользователю
-	- Возможность получения сообщения в режиме реального времени
+- Возможность получения message в режиме реального времени
+- Возможность ставить like на comment
+- Возможность отвечать на comment
+- Изменение profile password
+- Генерация случайного password
 
 ## Результат
