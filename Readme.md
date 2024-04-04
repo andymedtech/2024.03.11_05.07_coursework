@@ -135,11 +135,23 @@
 
 ## Результат
 
-+ Получить все profile
++ Получить все profile		[getAll]
 	- Postman GET
 	- http://localhost:8080/api/profile
-+ Получить profile по ID
++ Получить profile по ID	[getByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
-* Создать profile
-					[/]							[post]		[create]
+* Создать profile					[create]
+	- Postman POST
+	- http://localhost:8080/api/profile
+	*
+``` Body raw JSON
+{
+    "name": "profileName01",
+    "surname": "profileSurname01",
+    "email": "profile@email01.com",
+    "login": "profileLogin01",
+    "password": "profilePassword01",
+    "avatar": "http://profile.avatar01.jpg"
+}
+```

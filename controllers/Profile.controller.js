@@ -34,21 +34,21 @@ class ProfileController {
     //     //   "email": "liza@mail.ru",
     //     //   "avatar": "http://url.com",
     //     // }
-    //     try {
-    //       const { name, lastname, login, password, email, avatar } = req.body;
-    //       const userData = await user.create({
-    //         name,
-    //         lastname,
-    //         login,
-    //         password,
-    //         email,
-    //         avatar,
-    //       });
-    //       res.json(userData);
-    //     } catch (e) {
-    //       console.log(e);
-    //       res.json("ERROR");
-    //     }
+    try {
+      const { name, surname, email, login, password, avatar } = req.body;
+      const profileData = await profile.create({
+        name,
+        surname,
+        email,
+        login,
+        password,
+        avatar,
+      });
+      res.json(profileData);
+    } catch (e) {
+      console.log(e);
+      res.json("ERROR");
+    }
   }
   static async update(req, res) {
     //     // postman PUT http://localhost:8080/api/user
