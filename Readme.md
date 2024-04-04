@@ -112,9 +112,9 @@
 					[/short/:id]		[get]			[getShortByID]
 	+ Создать profile
 					[/]							[post]		[create]
-	* Изменить profile
+	+ Изменить profile
 					[/]							[put]			[update]
-	* Удалить profile
+	+ Удалить profile
 					[/]							[delete]	[delete]
 - [message]
 					[/message]
@@ -141,7 +141,7 @@
 + Получить profile по ID	[getByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
-* Создать profile					[create]
++ Создать profile					[create]
 	- Postman POST
 	- http://localhost:8080/api/profile
 	*
@@ -155,3 +155,32 @@
     "avatar": "http://profile.avatar01.jpg"
 }
 ```
++	Изменить profile				[update]
+	-	Postman PUT
+	-	http://localhost:8080/api/profile
+	*
+``` Body raw JSON
+{
+		"id": "660e86b6a00dfd18c8be3484",
+    "surname": "profileSurname01-1",
+    "avatar": "http://profile.avatar01-1.jpg"
+}
+```
++ Удалить profile
+	+ Postman DELETE
+	-	http://localhost:8080/api/profile
+	*
+``` Body raw JSON
+{
+		"id": "660e86b6a00dfd18c8be3484",
+    "surname": "profileSurname01-1",
+    "avatar": "http://profile.avatar01-1.jpg"
+}
+```
+					[/]							[delete]	[delete]
+
+    //     // postman DELETE http://localhost:8080/api/user
+    //     // Body JSON
+    //     // {
+    //     //   "id": "660d3c2c44a3371b37dd0c7a"
+    //     // }
