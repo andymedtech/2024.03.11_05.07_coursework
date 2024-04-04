@@ -1,12 +1,8 @@
-// class CommentController {
-//   // получить комментарии по ID поста
-//   static getByPostId(req, res) {}
-//   // добавить комментарий
-//   static create(req, res) {}
-//   // изменить комментарий
-//   static update(req, res) {}
-//   // удалить комментарий
-//   static delete(req, res) {}
-// }
+class CommentController {
+  static async getByPostID(req, res) {}
+  static async create(req, res) {}
+  static async update(req, res) {}
+  static async delete(req, res) {}
+}
 
-// module.exports = CommentController;
+module.exports = CommentController;

@@ -1,10 +1,7 @@
-// class LikeController {
-//   // получить лайки по ID поста
-//   static getByPostId(req, res) {}
-//   // добавить лайк
-//   static create(req, res) {}
-//   // удалить лайк
-//   static delete(req, res) {}
-// }
+class LikeController {
+  static async getByPostID(req, res) {}
+  static async create(req, res) {}
+  static async delete(req, res) {}
+}
 
-// module.exports = LikeController;
+module.exports = LikeController;
