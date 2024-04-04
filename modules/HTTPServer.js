@@ -4,7 +4,7 @@ const router = require("../routes");
 const app = express();
 
 app.use(express.json()); // расшифровка JSON
-app.use(express.urlencoded()); // расшифровка URL
+// app.use(express.urlencoded()); // расшифровка URL
 app.use("/api", router); // префикс к маршуту (good practice)
 
 // порт по умолчанию 8080, если не передаётся другой из /index.js

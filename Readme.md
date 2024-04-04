@@ -115,7 +115,7 @@
 	+ Изменить profile
 					[/]							[put]			[update]
 	+ Удалить profile
-					[/]							[delete]	[delete]
+					[/]							[delete]	[remove]
 - [message]
 					[/message]
 	* Получить message по fromID post
@@ -166,7 +166,7 @@
     "avatar": "http://profile.avatar01-1.jpg"
 }
 ```
-+ Удалить profile
++ Удалить profile					[remove]
 	+ Postman DELETE
 	-	http://localhost:8080/api/profile
 	*
