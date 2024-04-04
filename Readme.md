@@ -104,13 +104,13 @@
 					[/]							[delete]	[delete]
 - [profile]
 					[/profile]
-	* Получить все profile
+	+ Получить все profile
 					[/]							[get]			[getAll]
-	* Получить profile по ID
+	+ Получить profile по ID
 					[/:id]					[get]			[getByID]
 	* Получить короткую версию profile по ID
 					[/short/:id]		[get]			[getShortByID]
-	* Создать profile
+	+ Создать profile
 					[/]							[post]		[create]
 	* Изменить profile
 					[/]							[put]			[update]
@@ -138,3 +138,8 @@
 + Получить все profile
 	- Postman GET
 	- http://localhost:8080/api/profile
++ Получить profile по ID
+	- Postman GET
+	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
+* Создать profile
+					[/]							[post]		[create]

@@ -11,18 +11,16 @@ class ProfileController {
     }
   }
   static async getByID(req, res) {
-    //     // postman GET http://localhost:8080/api/user/660d3c2c44a3371b37dd0c7a
-    //     try {
-    //       // const { id } = req.require; // достаём через queire
-    //       const { id } = req.params; // достаём из динамического параметра
-    //       const userData = await user.findOne({
-    //         _id: id,
-    //       });
-    //       res.json(userData);
-    //     } catch (e) {
-    //       console.log(e);
-    //       res.json("ERROR");
-    //     }
+    try {
+      const { id } = req.params;
+      const profileData = await profile.findOne({
+        _id: id,
+      });
+      res.json(profileData);
+    } catch (e) {
+      console.log(e);
+      res.json("ERROR");
+    }
   }
   static async getShortByID(req, res) {}
   static async create(req, res) {
