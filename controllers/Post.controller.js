@@ -2,6 +2,7 @@ const getByID = require("./post/getByID");
 const getByProfileID = require("./post/getByProfileID");
 const create = require("./post/create");
 const update = require("./post/update");
+const remove = require("./post/remove");
 
 class PostController {
   static async getByID(req, res) {
@@ -16,7 +17,9 @@ class PostController {
   static async update(req, res) {
     update(req, res);
   }
-  static async delete(req, res) {}
+  static async remove(req, res) {
+    remove(req, res);
+  }
 }
 
 module.exports = PostController;

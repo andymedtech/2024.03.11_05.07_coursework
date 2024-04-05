@@ -84,8 +84,8 @@
 	[/]							[post]		[create]
 + Изменить post
 	[/]							[put]			[update]
-- Удалить post
-	[/]							[delete]	[delete]
++ Удалить post
+	[/]							[delete]	[remove]
 ### like \[/like]
 -  Получить like по ID post
 	[/:postID]			[get]			[getByPostID]
@@ -149,8 +149,6 @@
 		"content": "postContent01"
 }
 ```
-
------
 + Изменить post								[update]
 	-	Postman PUT
 	-	http://localhost:8080/api/post
@@ -161,7 +159,17 @@
     "content": "postContent02-1"
 }
 ```
-- Удалить post
++ Удалить post								[remove]
+	+ Postman DELETE
+	-	http://localhost:8080/api/post
+	*
+``` Body raw JSON
+{
+		"id": "660f29d689d9dd70ad286479"
+}
+```
+
+
 
 ### like
 -  Получить like по ID post
