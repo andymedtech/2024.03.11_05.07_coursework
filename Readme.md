@@ -133,13 +133,13 @@
 ## Результат
 
 ### post
-+ Получить post по ID					[getByID]
++ Получить post по ID						[getByID]
 	- Postman GET
 	- http://localhost:8080/api/post/660fd20dab1b6d5596a889b6
 + Получить все post по ID profile	[getByProfileID]
 	- Postman GET
 	- http://localhost:8080/api/post/profile/660f1d41368b7acc9805aa72
-+ Создать post								[create]
++ Создать post									[create]
 	- Postman POST
 	- http://localhost:8080/api/post
 	*
@@ -149,7 +149,7 @@
 		"content": "postContent01"
 }
 ```
-+ Изменить post								[update]
++ Изменить post									[update]
 	-	Postman PUT
 	-	http://localhost:8080/api/post
 	*
@@ -159,7 +159,7 @@
     "content": "postContent02-1"
 }
 ```
-+ Удалить post								[remove]
++ Удалить post									[remove]
 	+ Postman DELETE
 	-	http://localhost:8080/api/post
 	*
@@ -170,8 +170,10 @@
 ```
 
 ### like
--  Получить все like по ID post
-+  Поставить like post				[create]
++  Получить все like по ID post	[getByPostID]
+	- Postman GET
+	- http://localhost:8080/api/like/660fd20dab1b6d5596a889b6
++  Поставить like post					[create]
 	- Postman POST
 	- http://localhost:8080/api/like
 	*
@@ -189,15 +191,21 @@
 		"post_id": "660fd20dab1b6d5596a889b6"
 }
 ```
--  Удалить like post
+-  Удалить like post						[remove]
+	+ Postman DELETE
+	-	http://localhost:8080/api/post
+	*
+``` Body raw JSON
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"post_id": "660fd20dab1b6d5596a889b6"
+}
+```
 
 ---
-+  Получить все like по ID post
-	[/:postID]			[get]			[getByPostID]
-+  Поставить like post
-	[/]							[post]		
+	
 +  Удалить like post
-	[/]							[delete]	[remove]
+	[/]							[delete]	
 	
 ---
 
@@ -208,16 +216,16 @@
 - Удалить comment
 
 ### profile
-+ Получить все profile				[getAll]
++ Получить все profile					[getAll]
 	- Postman GET
 	- http://localhost:8080/api/profile
-+ Получить profile по ID			[getByID]
++ Получить profile по ID				[getByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
 + Получить короткую версию profile по ID	[getShortByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/short/660f1d41368b7acc9805aa72
-+ Создать profile							[create]
++ Создать profile								[create]
 	- Postman POST
 	- http://localhost:8080/api/profile
 	*
@@ -231,7 +239,7 @@
     "avatar": "http://profile.avatar01.jpg"
 }
 ```
-+	Изменить profile						[update]
++	Изменить profile							[update]
 	-	Postman PUT
 	-	http://localhost:8080/api/profile
 	*
@@ -242,7 +250,7 @@
     "avatar": "http://profile.avatar01-1.jpg"
 }
 ```
-+ Удалить profile							[remove]
++ Удалить profile								[remove]
 	+ Postman DELETE
 	-	http://localhost:8080/api/profile
 	*

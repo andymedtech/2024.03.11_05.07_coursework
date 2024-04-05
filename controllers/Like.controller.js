@@ -1,7 +1,10 @@
+const getByPostID = require("./like/getByPostID");
 const create = require("./like/create");
 
 class LikeController {
-  static async getByPostID(req, res) {}
+  static async getByPostID(req, res) {
+    getByPostID(req, res);
+  }
   static async create(req, res) {
     create(req, res);
   }
