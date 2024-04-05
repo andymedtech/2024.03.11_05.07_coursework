@@ -74,7 +74,7 @@
 ## Функционал
 
 ### post \[/post]
-- Получить post по ID
++ Получить post по ID
 	[/:id]					[get]			[getByID]
 - Получить post по ID profile
 	[/profile/:id]	[get]			[getByProfileID]
@@ -131,7 +131,9 @@
 ## Результат
 
 ### post
-- Получить post по ID
++ Получить post по ID			[getByID]
+	- Postman GET
+	- http://localhost:8080/api/post/660fd20dab1b6d5596a889b6
 - Получить post по ID profile
 + Создать post						[create]
 	- Postman POST
