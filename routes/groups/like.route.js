@@ -5,6 +5,6 @@ const router = new Router();
 
 router.get("/:postID", LikeController.getByPostID);
 router.post("/", LikeController.create);
-router.delete("/", LikeController.delete);
+router.delete("/", LikeController.remove);
 
 module.exports = router;

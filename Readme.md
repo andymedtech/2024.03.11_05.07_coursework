@@ -87,12 +87,12 @@
 + Удалить post
 	[/]							[delete]	[remove]
 ### like \[/like]
--  Получить like по ID post
++  Получить все like по ID post
 	[/:postID]			[get]			[getByPostID]
--  Поставить like post
++  Поставить like post
 	[/]							[post]		[create]
--  Удалить like post
-	[/]							[delete]	[delete]
++  Удалить like post
+	[/]							[delete]	[remove]
 ### comment \[/comment]
 * Получить comment по ID post
 	[/:postID]			[get]			[getByPostID]
@@ -169,12 +169,37 @@
 }
 ```
 
-
-
 ### like
--  Получить like по ID post
--  Поставить like post
+-  Получить все like по ID post
++  Поставить like post				[create]
+	- Postman POST
+	- http://localhost:8080/api/like
+	*
+``` Body raw JSON
+{
+		"user_id": "66068f9d5669f56221fefd69",
+		"post_id": "660fd20dab1b6d5596a889b6"
+}
+```
+	*
+
+``` Body raw JSON
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"post_id": "660fd20dab1b6d5596a889b6"
+}
+```
 -  Удалить like post
+
+---
++  Получить все like по ID post
+	[/:postID]			[get]			[getByPostID]
++  Поставить like post
+	[/]							[post]		
++  Удалить like post
+	[/]							[delete]	[remove]
+	
+---
 
 ### comment
 - Получить comment по ID post
