@@ -160,7 +160,7 @@
 }
 ```
 + Удалить post									[remove]
-	+ Postman DELETE
+	- Postman DELETE
 	-	http://localhost:8080/api/post
 	*
 ``` Body raw JSON
@@ -191,8 +191,8 @@
 		"post_id": "660fd20dab1b6d5596a889b6"
 }
 ```
--  Удалить like post						[remove]
-	+ Postman DELETE
++  Удалить like post						[remove]
+	- Postman DELETE
 	-	http://localhost:8080/api/post
 	*
 ``` Body raw JSON
@@ -201,13 +201,6 @@
 		"post_id": "660fd20dab1b6d5596a889b6"
 }
 ```
-
----
-	
-+  Удалить like post
-	[/]							[delete]	
-	
----
 
 ### comment
 - Получить comment по ID post
@@ -251,7 +244,7 @@
 }
 ```
 + Удалить profile								[remove]
-	+ Postman DELETE
+	- Postman DELETE
 	-	http://localhost:8080/api/profile
 	*
 ``` Body raw JSON
