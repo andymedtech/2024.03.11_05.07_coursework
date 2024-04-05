@@ -76,7 +76,7 @@
 ### post \[/post]
 + Получить post по ID
 	[/:id]					[get]			[getByID]
-- Получить post по ID profile
++ Получить все post по ID profile
 	[/profile/:id]	[get]			[getByProfileID]
 + Создать post
 	[/]							[post]		[create]
@@ -131,11 +131,13 @@
 ## Результат
 
 ### post
-+ Получить post по ID			[getByID]
++ Получить post по ID					[getByID]
 	- Postman GET
 	- http://localhost:8080/api/post/660fd20dab1b6d5596a889b6
-- Получить post по ID profile
-+ Создать post						[create]
++ Получить все post по ID profile	[getByProfileID]
+	- Postman GET
+	- http://localhost:8080/api/post/profile/660f1d41368b7acc9805aa72
++ Создать post								[create]
 	- Postman POST
 	- http://localhost:8080/api/post
 	*
@@ -160,16 +162,16 @@
 - Удалить comment
 
 ### profile
-+ Получить все profile		[getAll]
++ Получить все profile				[getAll]
 	- Postman GET
 	- http://localhost:8080/api/profile
-+ Получить profile по ID	[getByID]
++ Получить profile по ID			[getByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
 + Получить короткую версию profile по ID	[getShortByID]
 	- Postman GET
 	- http://localhost:8080/api/profile/short/660f1d41368b7acc9805aa72
-+ Создать profile					[create]
++ Создать profile							[create]
 	- Postman POST
 	- http://localhost:8080/api/profile
 	*
@@ -183,7 +185,7 @@
     "avatar": "http://profile.avatar01.jpg"
 }
 ```
-+	Изменить profile				[update]
++	Изменить profile						[update]
 	-	Postman PUT
 	-	http://localhost:8080/api/profile
 	*
@@ -194,7 +196,7 @@
     "avatar": "http://profile.avatar01-1.jpg"
 }
 ```
-+ Удалить profile					[remove]
++ Удалить profile							[remove]
 	+ Postman DELETE
 	-	http://localhost:8080/api/profile
 	*
