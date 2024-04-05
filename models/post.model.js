@@ -15,6 +15,10 @@ const schema = new Schema({
     type: Schema.Types.Date,
     required: true,
   },
+  timechange: {
+    type: Schema.Types.Date,
+    required: true,
+  },
 });
 
 const postModel = model("posts", schema);

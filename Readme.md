@@ -13,6 +13,7 @@
 		+ user_id
 		+ content
 		+ timestamp
+		+ timechange
 	* likes
 						[/models/like.model.js]
 						[/routes/groups/like.route.js]
@@ -63,6 +64,7 @@
 |**user_id**     |+    |+    |+       |-       |-       |
 |**content**     |+    |-    |+       |-       |+       |
 |**timestamp**   |+    |+    |+       |-       |+       |
+|**timechange**  |+    |-    |-       |-       |-       |
 |**post_id**     |-    |+    |+       |-       |-       |
 |**name**        |-    |-    |-       |+       |-       |
 |**surname**     |-    |-    |-       |+       |-       |
@@ -80,7 +82,7 @@
 	[/profile/:id]	[get]			[getByProfileID]
 + Создать post
 	[/]							[post]		[create]
-- Изменить post
++ Изменить post
 	[/]							[put]			[update]
 - Удалить post
 	[/]							[delete]	[delete]
@@ -147,7 +149,18 @@
 		"content": "postContent01"
 }
 ```
-- Изменить post
+
+-----
++ Изменить post								[update]
+	-	Postman PUT
+	-	http://localhost:8080/api/post
+	*
+``` Body raw JSON
+{
+		"id": "660fd20dab1b6d5596a889b6",
+    "content": "postContent02-1"
+}
+```
 - Удалить post
 
 ### like
