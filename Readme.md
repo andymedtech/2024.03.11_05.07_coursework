@@ -215,8 +215,16 @@ http://localhost:8080/api/like
 [/controllers/Comment.controller.js]
 ```
 					
-- **Получить comment по ID post**
-	[/:postID]			[get]			[getByPostID]
++ **Получить все comment по ID post**
+```
+[http://localhost:8080/api/comment/:post_id]
+[getByPostID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/comment/661185a25e6fe2b1acc3032e
+```
 	
 + **Создать comment**
 ```

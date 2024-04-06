@@ -4,9 +4,8 @@ module.exports = async (req, res) => {
   try {
     const { post_id } = req.params;
     const likeData = await like.find({
-      post_id: post_id,
+      post_id,
     });
-
     res.json(likeData.length);
   } catch (e) {
     console.log(e);
