@@ -263,10 +263,22 @@ http://localhost:8080/api/comment
 }
 ```
 	
-- **Удалить comment**
-	[/]							[delete]	[delete]
-	
-	---
++ **Удалить comment**
+
+```
+[http://localhost:8080/api/comment]
+[remove]
+[DELETE]
+```
+
+``` Postman DELETE Body raw JSON
+http://localhost:8080/api/comment
+{
+	"id": "661196487d770b28e81431e6"
+}
+```
+
+---
 	
 ### profile \[/profile]
 
