@@ -384,25 +384,41 @@ http://localhost:8080/api/profile
 	
 ---
 
-### message \[/message]
+### message
 
-					[models/message.model.js]
-					[/routes/groups/message.route.js]
-					[/message]
-					
-					
-* Получить message по fromID post
-	[/:fromID]			[get]		[getFromID]
-* Получить message по toID post
-	[/:toID]				[get]		[getToID]
-* Создать message
-	[/]							[post]		[create]
+
+```
+[http://localhost:8080/api/message]
+[/models/message.model.js]
+[/routes/groups/message.route.js]
+[/controllers/Message.controller.js]
+```
+
++ **Получить message по fromID post**
+	[/:fromID]			[get]		[getUserFromID]
 	
-	### message
-- Получить message по fromID post
-- Получить message по toID post
-- Создать message
++ **Получить message по toID post**
+	[/:toID]				[get]		[getUserToID]
 	
++ **Создать message**
+
+```
+[http://localhost:8080/api/message]
+[create]
+[POST]
+```
+
+``` Postman POST Body raw JSON
+http://localhost:8080/api/message
+{
+	"user_id_from": "66068f9d5669f56221fefd69",
+	"user_id_to": "660f1d41368b7acc9805aa72",
+	"content": "messageContent01"
+}
+```
+
+---
+
 ## Прочий функционал
 - Возможность получения message в режиме реального времени
 - Возможность ставить like на comment

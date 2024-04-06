@@ -3,8 +3,8 @@ const messageController = require("../../controllers/Message.controller");
 
 const router = new Router();
 
-router.get("/:fromID", messageController.getFromID);
-router.get("/:toID", messageController.getToID);
+router.get("/:user_id_from", messageController.getUserFromID);
+router.get("/:user_id_to", messageController.getUserToID);
 router.post("/", messageController.create);
 
 module.exports = router;
