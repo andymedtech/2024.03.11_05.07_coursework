@@ -1,5 +1,5 @@
 const post = require("../../models/post.model");
-
+// Изменить post
 module.exports = async (req, res) => {
   try {
     const { id } = req.body;

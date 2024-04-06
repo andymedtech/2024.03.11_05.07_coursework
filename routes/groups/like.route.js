@@ -3,7 +3,7 @@ const LikeController = require("../../controllers/Like.controller");
 
 const router = new Router();
 
-router.get("/:postID", LikeController.getByPostID);
+router.get("/:post_id", LikeController.getByPostID);
 router.post("/", LikeController.create);
 router.delete("/", LikeController.remove);
 

@@ -1,5 +1,5 @@
 const like = require("../../models/like.model");
-
+// Поставить like post
 module.exports = async (req, res) => {
   try {
     const { user_id, post_id } = req.body;

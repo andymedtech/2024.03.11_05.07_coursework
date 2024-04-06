@@ -1,10 +1,10 @@
 const like = require("../../models/like.model");
-
+// Получить все like по ID post
 module.exports = async (req, res) => {
   try {
-    const { postID } = req.params;
+    const { post_id } = req.params;
     const likeData = await like.find({
-      post_id: postID,
+      post_id: post_id,
     });
 
     res.json(likeData.length);

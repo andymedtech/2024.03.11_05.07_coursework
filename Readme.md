@@ -3,97 +3,226 @@
 # API социальной сети
 
 ## Выполнить
-+ Хранение данных в database [mongodb://localhost:27017/fsd_05]
-+ Collections в database **MongoDB**
-	* posts
-						[/models/post.model.js]
-						[/routes/groups/post.route.js]
-						[/post]
-		- _id
-		+ user_id
-		+ content
-		+ timestamp
-		+ timechange
-	* likes
-						[/models/like.model.js]
-						[/routes/groups/like.route.js]
-						[/like]
-		- _id
-		+ user_id
-		+ post_id
-		+ timestamp
-	* comments
-						[/models/comment.model.js]
-						[/routes/groups/comment.route.js]
-						[/comment]
-		- _id
-		+ user_id
-		+ post_id
-		+ content
-		+ timestamp
-	* profiles
-						[/models/profile.model.js]
-						[/routes/groups/profile.route.js]
-						[/profile]
-		- _id
-		+ name
-		+ surname
-		+ email
-		+ login
-		+ password
-		+ avatar
-	* messages
-						[models/message.model.js]
-						[/routes/groups/message.route.js]
-						[/message]
-		- _id
-		+ user_id_from
-		+ user_id_to
-		+ content
-		+ timestamp
-- Применение **CRUD**
-- Использование паттернов и архитектуры **MVC**
-- Авторизация по **JWT**
-- Проверка прав при помощи **middleware**
++ [x] Хранение данных в **database** [mongodb://localhost:27017/fsd_05]
++ [x] Collections в database **MongoDB**
++ [x] Применение **CRUD**
+- [ ] Использование паттернов и архитектуры **MVC**
+- [ ] Авторизация по **JWT**
+- [ ] Проверка прав при помощи **middleware**
 
 ## Database
+
+**posts**
+- _id
++ user_id
++ content
++ timestamp
++ timechange
+
+**likes**
+- _id
++ user_id
++ post_id
++ timestamp
+
+**comments**
+- _id
++ user_id
++ post_id
++ content
++ timestamp
+
+**profiles**
+- _id
++ name
++ surname
++ email
++ login
++ password
++ avatar
+
+**messages**
+- _id
++ user_id_from
++ user_id_to
++ content
++ timestamp
 
 |                |posts|likes|comments|profiles|messages|
 |:---------------|:---:|:---:|:------:|:------:|:------:|
 |**\_id**        |+    |+    |+       |+       |+       |
-|**user_id**     |+    |+    |+       |-       |-       |
-|**content**     |+    |-    |+       |-       |+       |
-|**timestamp**   |+    |+    |+       |-       |+       |
-|**timechange**  |+    |-    |-       |-       |-       |
-|**post_id**     |-    |+    |+       |-       |-       |
-|**name**        |-    |-    |-       |+       |-       |
-|**surname**     |-    |-    |-       |+       |-       |
-|**email**       |-    |-    |-       |+       |-       |
-|**password**    |-    |-    |-       |+       |-       |
-|**user_id_from**|-    |-    |-       |-       |+       |
-|**user_id_to**  |-    |-    |-       |-       |+       |
+|**user_id**     |+    |+    |+       |        |        |
+|**content**     |+    |-    |+       |        |+       |
+|**timestamp**   |+    |+    |+       |        |+       |
+|**timechange**  |+    |     |        |        |        |
+|**post_id**     |     |+    |+       |        |        |
+|**name**        |     |     |        |+       |        |
+|**surname**     |     |     |        |+       |        |
+|**email**       |     |     |        |+       |        |
+|**password**    |     |     |        |+       |        |
+|**user_id_from**|     |     |        |        |+       |
+|**user_id_to**  |     |     |        |        |+       |
 
 ## Функционал
 
-### post \[/post]
-+ Получить post по ID
-	[/:id]					[get]			[getByID]
-+ Получить все post по ID profile
-	[/profile/:id]	[get]			[getByProfileID]
-+ Создать post
-	[/]							[post]		[create]
-+ Изменить post
-	[/]							[put]			[update]
-+ Удалить post
-	[/]							[delete]	[remove]
-### like \[/like]
-+  Получить все like по ID post
-	[/:postID]			[get]			[getByPostID]
-+  Поставить like post
-	[/]							[post]		[create]
-+  Удалить like post
-	[/]							[delete]	[remove]
-### comment \[/comment]
+---
+
+### post
+```
+[http://localhost:8080/api/post]
+[/models/post.model.js]
+[/routes/groups/post.route.js]
+[/controllers/Post.controller.js]
+```
+	
++ **Получить post по ID**
+
+```
+[http://localhost:8080/api/post/:id]
+[getByID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/post/661185a25e6fe2b1acc3032e
+```
+	
++ **Получить все post по ID profile**
+
+```
+[http://localhost:8080/api/post/profile/:user_id]
+[getByProfileID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/post/profile/660f1d41368b7acc9805aa72
+```
+	
++ **Создать post**
+
+```
+[http://localhost:8080/api/post]
+[create]
+[POST]
+```
+
+``` Postman POST Body raw JSON
+http://localhost:8080/api/post
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"content": "postContent01"
+}
+```
+	
++ **Изменить post**
+
+```
+[http://localhost:8080/api/post]
+[update]
+[PUT]
+```
+
+``` Postman PUT Body raw JSON
+http://localhost:8080/api/post
+{
+		"id": "661185a25e6fe2b1acc3032e",
+    "content": "postContent02-1"
+}
+```
+	
++ **Удалить post**
+
+```
+[http://localhost:8080/api/post]
+[remove]
+[DELETE]
+```
+
+``` Postman PUT Body raw JSON
+http://localhost:8080/api/post
+{
+		"id": "661185a65e6fe2b1acc30330"
+}
+```
+
+---
+
+### like
+```
+[http://localhost:8080/api/like]
+[/models/like.model.js]
+[/routes/groups/like.route.js]
+[/controllers/Like.controller.js]
+```
+
++  **Получить все like по ID post**
+
+```
+[http://localhost:8080/api/like/:post_id]
+[getByPostID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/like/6611859c5e6fe2b1acc3032c
+```
+	
++  **Поставить like post**
+
+```
+[http://localhost:8080/api/like]
+[create]
+[POST]
+```
+
+``` Postman POST Body raw JSON
+http://localhost:8080/api/like
+{
+		"user_id": "66068f9d5669f56221fefd69",
+		"post_id": "6611859c5e6fe2b1acc3032c"
+}
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"post_id": "6611859c5e6fe2b1acc3032c"
+}
+```
+
++  **Удалить like post**
+
+```
+[http://localhost:8080/api/like]
+[remove]
+[DELETE]
+```
+
+``` Postman DELETE Body raw JSON
+http://localhost:8080/api/like
+{
+		"user_id": "66068f9d5669f56221fefd69",
+		"post_id": "6611859c5e6fe2b1acc3032c"
+}
+```
+
+---
+	
+### comment
+```
+[http://localhost:8080/api/comment]
+[/models/comment.model.js]
+[/routes/groups/comment.route.js]
+[/controllers/Comment.controller.js]
+```
+
+
+
+ \[/comment]
+
+					[/models/comment.model.js]
+					[/routes/groups/comment.route.js]
+					[/comment]
+					
+					
 * Получить comment по ID post
 	[/:postID]			[get]			[getByPostID]
 * Создать comment
@@ -102,7 +231,22 @@
 	[/]							[put]			[update]
 * Удалить comment
 	[/]							[delete]	[delete]
+	
+	---
+	### comment
+- Получить comment по ID post
+- Создать comment
+- Изменить comment
+- Удалить comment
+	---
+	
 ### profile \[/profile]
+
+					[/models/profile.model.js]
+					[/routes/groups/profile.route.js]
+					[/profile]
+					
+					
 + Получить все profile
 	[/]							[get]			[getAll]
 + Получить profile по ID
@@ -116,6 +260,12 @@
 + Удалить profile
 	[/]							[delete]	[remove]
 ### message \[/message]
+
+					[models/message.model.js]
+					[/routes/groups/message.route.js]
+					[/message]
+					
+					
 * Получить message по fromID post
 	[/:fromID]			[get]		[getFromID]
 * Получить message по toID post
@@ -132,81 +282,11 @@
 
 ## Результат
 
-### post
-+ Получить post по ID						[getByID]
-	- Postman GET
-	- http://localhost:8080/api/post/660fd20dab1b6d5596a889b6
-+ Получить все post по ID profile	[getByProfileID]
-	- Postman GET
-	- http://localhost:8080/api/post/profile/660f1d41368b7acc9805aa72
-+ Создать post									[create]
-	- Postman POST
-	- http://localhost:8080/api/post
-	*
-``` Body raw JSON
-{
-		"user_id": "660f1d41368b7acc9805aa72",
-		"content": "postContent01"
-}
-```
-+ Изменить post									[update]
-	-	Postman PUT
-	-	http://localhost:8080/api/post
-	*
-``` Body raw JSON
-{
-		"id": "660fd20dab1b6d5596a889b6",
-    "content": "postContent02-1"
-}
-```
-+ Удалить post									[remove]
-	- Postman DELETE
-	-	http://localhost:8080/api/post
-	*
-``` Body raw JSON
-{
-		"id": "660f29d689d9dd70ad286479"
-}
-```
 
-### like
-+  Получить все like по ID post	[getByPostID]
-	- Postman GET
-	- http://localhost:8080/api/like/660fd20dab1b6d5596a889b6
-+  Поставить like post					[create]
-	- Postman POST
-	- http://localhost:8080/api/like
-	*
-``` Body raw JSON
-{
-		"user_id": "66068f9d5669f56221fefd69",
-		"post_id": "660fd20dab1b6d5596a889b6"
-}
-```
-	*
 
-``` Body raw JSON
-{
-		"user_id": "660f1d41368b7acc9805aa72",
-		"post_id": "660fd20dab1b6d5596a889b6"
-}
-```
-+  Удалить like post						[remove]
-	- Postman DELETE
-	-	http://localhost:8080/api/post
-	*
-``` Body raw JSON
-{
-		"user_id": "660f1d41368b7acc9805aa72",
-		"post_id": "660fd20dab1b6d5596a889b6"
-}
-```
 
-### comment
-- Получить comment по ID post
-- Создать comment
-- Изменить comment
-- Удалить comment
+
+
 
 ### profile
 + Получить все profile					[getAll]
