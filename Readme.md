@@ -386,12 +386,23 @@ http://localhost:8080/api/profile
 
 ### message
 
-
 ```
 [http://localhost:8080/api/message]
 [/models/message.model.js]
 [/routes/groups/message.route.js]
 [/controllers/Message.controller.js]
+```
+
++ **Получить диалог**
+
+```
+[http://localhost:8080/api/message/:user_id_from/:user_id_to]
+[getDialogue]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/message/66068f9d5669f56221fefd69/660f1d41368b7acc9805aa72
 ```
 
 + **Получить message по fromID post**

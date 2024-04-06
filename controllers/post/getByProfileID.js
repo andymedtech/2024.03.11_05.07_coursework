@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
   try {
     const { user_id } = req.params;
     const postData = await post.find({
-      user_id: user_id,
+      user_id,
     });
     res.json(postData);
   } catch (e) {
