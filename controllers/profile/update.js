@@ -1,5 +1,5 @@
 const profile = require("../../models/profile.model");
-
+// Изменить profile
 module.exports = async (req, res) => {
   try {
     const { id } = req.body;

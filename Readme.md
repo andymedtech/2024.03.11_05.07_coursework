@@ -69,6 +69,7 @@
 ---
 
 ### post
+
 ```
 [http://localhost:8080/api/post]
 [/models/post.model.js]
@@ -150,6 +151,7 @@ http://localhost:8080/api/post
 ---
 
 ### like
+
 ```
 [http://localhost:8080/api/like]
 [/models/like.model.js]
@@ -208,6 +210,7 @@ http://localhost:8080/api/like
 ---
 	
 ### comment
+
 ```
 [http://localhost:8080/api/comment]
 [/models/comment.model.js]
@@ -216,6 +219,7 @@ http://localhost:8080/api/like
 ```
 					
 + **Получить все comment по ID post**
+
 ```
 [http://localhost:8080/api/comment/:post_id]
 [getByPostID]
@@ -227,6 +231,7 @@ http://localhost:8080/api/comment/661185a25e6fe2b1acc3032e
 ```
 	
 + **Создать comment**
+
 ```
 [http://localhost:8080/api/comment]
 [create]
@@ -246,7 +251,7 @@ http://localhost:8080/api/comment
 	"content": "commentContent02"
 }
 ```
-	
+
 + **Изменить comment**
 
 ```
@@ -262,7 +267,7 @@ http://localhost:8080/api/comment
 	"content": "commentContent02-3"
 }
 ```
-	
+
 + **Удалить comment**
 
 ```
@@ -279,26 +284,106 @@ http://localhost:8080/api/comment
 ```
 
 ---
-	
-### profile \[/profile]
 
-					[/models/profile.model.js]
-					[/routes/groups/profile.route.js]
-					[/profile]
+### profile
+
+```
+[http://localhost:8080/api/profile]
+[/models/profile.model.js]
+[/routes/groups/profile.route.js]
+[/controllers/Profile.controller.js]
+```
 					
-					
-+ Получить все profile
-	[/]							[get]			[getAll]
-+ Получить profile по ID
-	[/:id]					[get]			[getByID]
-+ Получить короткую версию profile по ID
-	[/short/:id]		[get]			[getShortByID]
-+ Создать profile
-	[/]							[post]		[create]
-+ Изменить profile
-	[/]							[put]			[update]
-+ Удалить profile
-	[/]							[delete]	[remove]
++ **Получить все profile**
+
+```
+[http://localhost:8080/api/profile]
+[getAll]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/profile
+```
+	
++ **Получить profile по ID**
+
+```
+[http://localhost:8080/api/profile/:id]
+[getByID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/profile/660f1d41368b7acc9805aa72
+```
+	
++ **Получить короткую версию profile по ID**
+
+```
+[http://localhost:8080/api/profile/short/:id]
+[getShortByID]
+[GET]
+```
+
+``` Postman GET
+http://localhost:8080/api/profile/short/660f1d41368b7acc9805aa72
+```
+
++ **Создать profile**
+
+```
+[http://localhost:8080/api/profile]
+[create]
+[POST]
+```
+
+``` Postman POST Body raw JSON
+http://localhost:8080/api/profile
+{
+	"name": "profileName01",
+	"surname": "profileSurname01",
+	"email": "profile@email01.com",
+	"login": "profileLogin01",
+	"password": "profilePassword01",
+	"avatar": "http://profile.avatar01.jpg"
+}
+```
+	
++ **Изменить profile**
+
+```
+[http://localhost:8080/api/profile]
+[update]
+[PUT]
+```
+
+``` Postman PUT Body raw JSON
+http://localhost:8080/api/profile
+{
+	"id": "6611b0ed872c3a0ea52d2a33",
+	"surname": "profileSurname01-1",
+	"avatar": "http://profile.avatar01-1.jpg"
+}
+```
+	
++ **Удалить profile**
+
+```
+[http://localhost:8080/api/profile]
+[remove]
+[DELETE]
+```
+
+``` Postman DELETE Body raw JSON
+http://localhost:8080/api/profile
+{
+	"id": "6611b0ed872c3a0ea52d2a33"
+}
+```
+	
+---
+
 ### message \[/message]
 
 					[models/message.model.js]
@@ -312,6 +397,11 @@ http://localhost:8080/api/comment
 	[/:toID]				[get]		[getToID]
 * Создать message
 	[/]							[post]		[create]
+	
+	### message
+- Получить message по fromID post
+- Получить message по toID post
+- Создать message
 	
 ## Прочий функционал
 - Возможность получения message в режиме реального времени
@@ -328,52 +418,4 @@ http://localhost:8080/api/comment
 
 
 
-### profile
-+ Получить все profile					[getAll]
-	- Postman GET
-	- http://localhost:8080/api/profile
-+ Получить profile по ID				[getByID]
-	- Postman GET
-	- http://localhost:8080/api/profile/66068f9d5669f56221fefd69
-+ Получить короткую версию profile по ID	[getShortByID]
-	- Postman GET
-	- http://localhost:8080/api/profile/short/660f1d41368b7acc9805aa72
-+ Создать profile								[create]
-	- Postman POST
-	- http://localhost:8080/api/profile
-	*
-``` Body raw JSON
-{
-    "name": "profileName01",
-    "surname": "profileSurname01",
-    "email": "profile@email01.com",
-    "login": "profileLogin01",
-    "password": "profilePassword01",
-    "avatar": "http://profile.avatar01.jpg"
-}
-```
-+	Изменить profile							[update]
-	-	Postman PUT
-	-	http://localhost:8080/api/profile
-	*
-``` Body raw JSON
-{
-		"id": "660e86b6a00dfd18c8be3484",
-    "surname": "profileSurname01-1",
-    "avatar": "http://profile.avatar01-1.jpg"
-}
-```
-+ Удалить profile								[remove]
-	- Postman DELETE
-	-	http://localhost:8080/api/profile
-	*
-``` Body raw JSON
-{
-		"id": "660e86b6a00dfd18c8be3484"
-}
-```
 
-### message
-- Получить message по fromID post
-- Получить message по toID post
-- Создать message

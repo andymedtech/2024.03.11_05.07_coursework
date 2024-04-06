@@ -1,5 +1,5 @@
 const profile = require("../../models/profile.model");
-
+// Получить все profile
 module.exports = async (req, res) => {
   try {
     const profileList = await profile.find();

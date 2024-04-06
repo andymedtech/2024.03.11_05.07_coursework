@@ -1,5 +1,5 @@
 const profile = require("../../models/profile.model");
-
+// Создать profile
 module.exports = async (req, res) => {
   try {
     const { name, surname, email, login, password, avatar } = req.body;

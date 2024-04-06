@@ -1,5 +1,5 @@
 const profile = require("../../models/profile.model");
-
+// Получить profile по ID
 module.exports = async (req, res) => {
   try {
     const { id } = req.params;
