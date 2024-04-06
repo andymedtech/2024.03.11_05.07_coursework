@@ -111,8 +111,8 @@ http://localhost:8080/api/post/profile/660f1d41368b7acc9805aa72
 ``` Postman POST Body raw JSON
 http://localhost:8080/api/post
 {
-		"user_id": "660f1d41368b7acc9805aa72",
-		"content": "postContent01"
+	"user_id": "660f1d41368b7acc9805aa72",
+	"content": "postContent01"
 }
 ```
 	
@@ -127,8 +127,8 @@ http://localhost:8080/api/post
 ``` Postman PUT Body raw JSON
 http://localhost:8080/api/post
 {
-		"id": "661185a25e6fe2b1acc3032e",
-    "content": "postContent02-1"
+	"id": "661185a25e6fe2b1acc3032e",
+	"content": "postContent02-1"
 }
 ```
 	
@@ -143,7 +143,7 @@ http://localhost:8080/api/post
 ``` Postman PUT Body raw JSON
 http://localhost:8080/api/post
 {
-		"id": "661185a65e6fe2b1acc30330"
+	"id": "661185a65e6fe2b1acc30330"
 }
 ```
 
@@ -180,12 +180,12 @@ http://localhost:8080/api/like/6611859c5e6fe2b1acc3032c
 ``` Postman POST Body raw JSON
 http://localhost:8080/api/like
 {
-		"user_id": "66068f9d5669f56221fefd69",
-		"post_id": "6611859c5e6fe2b1acc3032c"
+	"user_id": "66068f9d5669f56221fefd69",
+	"post_id": "6611859c5e6fe2b1acc3032c"
 }
 {
-		"user_id": "660f1d41368b7acc9805aa72",
-		"post_id": "6611859c5e6fe2b1acc3032c"
+	"user_id": "660f1d41368b7acc9805aa72",
+	"post_id": "6611859c5e6fe2b1acc3032c"
 }
 ```
 
@@ -200,8 +200,8 @@ http://localhost:8080/api/like
 ``` Postman DELETE Body raw JSON
 http://localhost:8080/api/like
 {
-		"user_id": "66068f9d5669f56221fefd69",
-		"post_id": "6611859c5e6fe2b1acc3032c"
+	"user_id": "66068f9d5669f56221fefd69",
+	"post_id": "6611859c5e6fe2b1acc3032c"
 }
 ```
 
@@ -236,19 +236,32 @@ http://localhost:8080/api/comment/661185a25e6fe2b1acc3032e
 ``` Postman POST Body raw JSON
 http://localhost:8080/api/comment
 {
-		"user_id": "660f1d41368b7acc9805aa72",
-		"post_id": "661185a25e6fe2b1acc3032e",
-		"content": "commentContent01"
+	"user_id": "660f1d41368b7acc9805aa72",
+	"post_id": "661185a25e6fe2b1acc3032e",
+	"content": "commentContent01"
 }
 {
-		"user_id": "66068f9d5669f56221fefd69",
-		"post_id": "661185a25e6fe2b1acc3032e",
-		"content": "commentContent02"
+	"user_id": "66068f9d5669f56221fefd69",
+	"post_id": "661185a25e6fe2b1acc3032e",
+	"content": "commentContent02"
 }
 ```
 	
-- **Изменить comment**
-	[/]							[put]			[update]
++ **Изменить comment**
+
+```
+[http://localhost:8080/api/comment]
+[update]
+[PUT]
+```
+
+``` Postman PUT Body raw JSON
+http://localhost:8080/api/comment
+{
+	"id": "661196507d770b28e81431e8",
+	"content": "commentContent02-3"
+}
+```
 	
 - **Удалить comment**
 	[/]							[delete]	[delete]

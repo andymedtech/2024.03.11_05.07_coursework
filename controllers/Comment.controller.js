@@ -1,6 +1,6 @@
 const getByPostID = require("./comment/getByPostID");
 const create = require("./comment/create");
-// const update = require("./comment/update");
+const update = require("./comment/update");
 // const remove = require("./comment/remove");
 
 class CommentController {
@@ -11,7 +11,7 @@ class CommentController {
     create(req, res);
   }
   static async update(req, res) {
-    // update(req, res);
+    update(req, res);
   }
   static async remove(req, res) {
     // remove(req, res);
