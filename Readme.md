@@ -31,6 +31,7 @@
 + post_id
 + content
 + timestamp
++ timechange
 
 **profiles**
 - _id
@@ -54,7 +55,7 @@
 |**user_id**     |+    |+    |+       |        |        |
 |**content**     |+    |-    |+       |        |+       |
 |**timestamp**   |+    |+    |+       |        |+       |
-|**timechange**  |+    |     |        |        |        |
+|**timechange**  |+    |     |+       |        |        |
 |**post_id**     |     |+    |+       |        |        |
 |**name**        |     |     |        |+       |        |
 |**surname**     |     |     |        |+       |        |
@@ -213,31 +214,37 @@ http://localhost:8080/api/like
 [/routes/groups/comment.route.js]
 [/controllers/Comment.controller.js]
 ```
-
-
-
- \[/comment]
-
-					[/models/comment.model.js]
-					[/routes/groups/comment.route.js]
-					[/comment]
 					
-					
-* Получить comment по ID post
+- **Получить comment по ID post**
 	[/:postID]			[get]			[getByPostID]
-* Создать comment
-	[/]							[post]		[create]
-* Изменить comment
+	
++ **Создать comment**
+```
+[http://localhost:8080/api/comment]
+[create]
+[POST]
+```
+
+``` Postman POST Body raw JSON
+http://localhost:8080/api/comment
+{
+		"user_id": "660f1d41368b7acc9805aa72",
+		"post_id": "661185a25e6fe2b1acc3032e",
+		"content": "commentContent01"
+}
+{
+		"user_id": "66068f9d5669f56221fefd69",
+		"post_id": "661185a25e6fe2b1acc3032e",
+		"content": "commentContent02"
+}
+```
+	
+- **Изменить comment**
 	[/]							[put]			[update]
-* Удалить comment
+	
+- **Удалить comment**
 	[/]							[delete]	[delete]
 	
-	---
-	### comment
-- Получить comment по ID post
-- Создать comment
-- Изменить comment
-- Удалить comment
 	---
 	
 ### profile \[/profile]

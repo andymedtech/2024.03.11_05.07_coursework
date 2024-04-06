@@ -17,7 +17,9 @@ const schema = new Schema({
   },
   timestamp: {
     type: Schema.Types.Date,
-    required: true,
+  },
+  timechange: {
+    type: Schema.Types.Date,
   },
 });
 

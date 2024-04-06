@@ -6,6 +6,6 @@ const router = new Router();
 router.get("/:postID", CommentController.getByPostID);
 router.post("/", CommentController.create);
 router.put("/", CommentController.update);
-router.delete("/", CommentController.delete);
+router.delete("/", CommentController.remove);
 
 module.exports = router;
