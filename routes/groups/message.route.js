@@ -7,5 +7,6 @@ const router = new Router();
 // router.get("/:user_id_to", messageController.getUserToID);
 router.get("/:user_id_from/:user_id_to", messageController.getDialogue);
 router.post("/", messageController.create);
+router.put("/", messageController.getDialoguePUT);
 
 module.exports = router;

@@ -2,6 +2,7 @@
 // const getUserToID = require("./message/getUserToID");
 const getDialogue = require("./message/getDialogue");
 const create = require("./message/create");
+const getDialoguePUT = require("./message/getDialoguePUT");
 
 class MessageController {
   // static async getUserFromID(req, res) {
@@ -15,6 +16,9 @@ class MessageController {
   }
   static async create(req, res) {
     create(req, res);
+  }
+  static async getDialoguePUT(req, res) {
+    getDialoguePUT(req, res);
   }
 }
 

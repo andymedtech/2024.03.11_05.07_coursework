@@ -428,6 +428,22 @@ http://localhost:8080/api/message
 }
 ```
 
++ **Получить диалог через PUT**
+
+```
+[http://localhost:8080/api/message]
+[getDialoguePOST]
+[PUT]
+```
+
+``` Postman PUT
+http://localhost:8080/api/message
+{
+	"user_id_from": "66068f9d5669f56221fefd69",
+	"user_id_to": "660f1d41368b7acc9805aa72"
+}
+```
+
 ---
 
 ## Прочий функционал
