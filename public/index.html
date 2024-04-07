@@ -8,12 +8,141 @@
     <title>API социальной сети</title>
   </head>
   <body>
+    <!-- Форма нового пользователя -->
+    <form class="formProfile">
+      <div>
+        <label for="name">Имя * : </label>
+        <input id="name" name="name" type="text" placeholder="Name *" />
+      </div>
+      <div>
+        <label for="surname">Фамилия : </label>
+        <input id="surname" name="surname" type="text" placeholder="Surname" />
+      </div>
+      <div>
+        <label for="email">Почта : </label>
+        <input id="email" name="email" type="email" placeholder="e-mail" />
+      </div>
+      <div>
+        <label for="login">Логин * : </label>
+        <input id="login" name="login" type="text" placeholder="login *" />
+      </div>
+      <div>
+        <label for="password">Пароль * : </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="password *"
+        />
+      </div>
+      <div>
+        <label for="avatar">Аватар : </label>
+        <input id="avatar" name="avatar" type="text" placeholder="Avatar" />
+      </div>
+      <button id="btnSend">Submit</button>
+    </form>
+
+    <!-- Вывод пользователей -->
+    <div id="listProfile"></div>
+
     <script>
       "use strict";
-      const http = new XMLHttpRequest(); // создать request, readyState: 0
-      http.open("GET", "http://localhost:8080/api/profile"); // инициализировать request "Получить все profile", readyState: 1
-      http.send(); // послать request, readyState: 4
-      console.log(http);
+
+      // Получить все profile
+      {
+        const http = new XMLHttpRequest(); // создать request, readyState: 0
+        http.open("GET", "http://localhost:8080/api/profile"); // инициализировать request "Получить все profile", readyState: 1
+        http.send(); // послать request, readyState: 4
+      }
+      function getProfiles() {
+        // загружаем все profile сразу
+        const http = new XMLHttpRequest();
+        http.open("GET", "http://localhost:8080/api/profile", false);
+        http.send();
+        const profileList = JSON.parse(http.response);
+        profileList.forEach((profile) => renderProfiles(profile)); // и выводим
+      }
+
+      // проверка, что поля <form> заполнены
+      const form = document.querySelector(".formProfile");
+      const name = document.getElementById("name");
+      const login = document.getElementById("login");
+      const password = document.getElementById("password");
+      form.onsubmit = function (event) {
+        event.preventDefault(); // предотвращаем отправку формы
+        if (!name.value) {
+          console.log("поле name не заполнено");
+        } else if (!login.value) {
+          console.log("поле login не заполнено");
+        } else if (!password.value) {
+          console.log("поле password не заполнено");
+        } else {
+          console.log("данные отправлены");
+        }
+      };
+
+      // Создать profile
+      document.getElementById("btnSend").addEventListener("click", () => {
+        const name = document.getElementById("name");
+        const surname = document.getElementById("surname");
+        const email = document.getElementById("email");
+        const login = document.getElementById("login");
+        const password = document.getElementById("password");
+        const avatar = document.getElementById("avatar");
+        const sendData = {
+          name: name.value,
+          surname: surname.value,
+          email: email.value,
+          login: login.value,
+          password: password.value,
+          avatar: avatar.value,
+        };
+        const http = new XMLHttpRequest(); // создать request, readyState: 0
+        http.open("POST", "http://localhost:8080/api/profile", false); // инициализировать request, readyState: 1
+        http.setRequestHeader("Content-Type", "application/json;charset=UTF-8"); // формат отправления данных
+        http.send(JSON.stringify(sendData)); // перевести в строку и послать request, readyState: 4
+        name.value = "";
+        surname.value = "";
+        email.value = "";
+        login.value = "";
+        password.value = "";
+        avatar.value = "";
+        // console.log(JSON.parse(http.response)); // ответ с сервера
+        renderProfiles(JSON.parse(http.response)); // вывод всех пользователей
+      });
+
+      // рендер - вывод пользователей
+      function renderProfiles(profileData) {
+        document.getElementById("listProfile").innerHTML =
+          `
+            <div>
+                <img src="${profileData.avatar}", width="100", height="100" />
+                <p>${profileData.name} ${profileData.surname}</p>
+                <p>Почта : ${profileData.email}</p>
+                <!-- <button onclick="deleteProfile(${profileData._id})">Delete</button> -->
+                <button data-id="${profileData._id}" onclick="deleteProfile(this)">Delete</button>
+            </div>
+        ` + document.getElementById("listProfile").innerHTML; // новый добавляем сверху
+      }
+      // событие кнопки Удалить profile
+      function deleteProfile(profileData) {
+        // пошли через data-id - attribute
+        // console.log(profileData.dataset.id);
+        const http = new XMLHttpRequest();
+        http.open("DELETE", "http://localhost:8080/api/profile", false);
+        http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        http.send(
+          JSON.stringify({
+            id: profileData.dataset.id,
+          })
+        );
+        // console.log(JSON.parse(http.response));
+        document.getElementById("listProfile").innerHTML = "";
+        getProfiles(); // показать все profile
+      }
+
+      // показать все profile
+      getProfiles(); // запускаем функцию показать все profile
     </script>
   </body>
 </html>

@@ -467,4 +467,11 @@ http://localhost:8080/api/message
 /public/index.html файл для frontend
 http://localhost:8080/index.html
 
-**Получить все profile** http://localhost:8080/api/profile
+**Получить все profile**
+getAll GET 		http://localhost:8080/api/profile
+
+**Создать profile** 
+create POST 	http://localhost:8080/api/profile
+
+**Удалить profile**
+remove DELETE	http://localhost:8080/api/profile
