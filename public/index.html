@@ -1,0 +1,19 @@
+<!-- frontend -->
+<!-- запуск проекта > npm run dev -->
+<!-- открыть в браузере frontend http://localhost:8080/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API социальной сети</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const http = new XMLHttpRequest(); // создать request, readyState: 0
+      http.open("GET", "http://localhost:8080/api/profile"); // инициализировать request "Получить все profile", readyState: 1
+      http.send(); // послать request, readyState: 0
+      console.log(http);
+    </script>
+  </body>
+</html>

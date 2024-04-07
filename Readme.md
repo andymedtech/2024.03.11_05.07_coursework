@@ -405,11 +405,21 @@ http://localhost:8080/api/profile
 http://localhost:8080/api/message/66068f9d5669f56221fefd69/660f1d41368b7acc9805aa72
 ```
 
-+ **Получить message по fromID post**
-	[/:fromID]			[get]		[getUserFromID]
+? **Получить message по fromID post**
+
+```
+[http://localhost:8080/api/message/:user_id_from]?
+[getUserFromID]
+[GET]
+```
 	
-+ **Получить message по toID post**
-	[/:toID]				[get]		[getUserToID]
+? **Получить message по toID post**
+
+```
+[http://localhost:8080/api/message/:user_id_to]?
+[getUserToID]
+[GET]
+```
 	
 + **Создать message**
 
@@ -453,12 +463,8 @@ http://localhost:8080/api/message
 - Изменение profile password
 - Генерация случайного password
 
-## Результат
+## FRONTEND
+/public/index.html файл для frontend
+http://localhost:8080/index.html
 
-
-
-
-
-
-
-
+**Получить все profile** http://localhost:8080/api/profile
