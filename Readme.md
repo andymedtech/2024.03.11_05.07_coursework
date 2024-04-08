@@ -463,6 +463,11 @@ http://localhost:8080/api/message
 - Изменение profile password
 - Генерация случайного password
 
+## JWT
+
+**Создать profile** 
+create POST 	http://localhost:8080/api/profile
+
 ## FRONTEND
 /public/index.html файл для frontend
 http://localhost:8080/index.html
