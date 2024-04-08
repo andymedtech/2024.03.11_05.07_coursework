@@ -14,6 +14,6 @@ module.exports = async (req, res) => {
     res.json(commentData);
   } catch (e) {
     console.log(e);
-    res.json("ERROR");
+    res.json("ERROR controllers/comment/create.js");
   }
 };

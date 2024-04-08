@@ -9,6 +9,6 @@ module.exports = async (req, res) => {
     res.json(profileData);
   } catch (e) {
     console.log(e);
-    res.json("ERROR");
+    res.json("ERROR controllers/profile/remove.js");
   }
 };

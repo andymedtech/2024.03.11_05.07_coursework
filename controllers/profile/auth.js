@@ -2,7 +2,7 @@ const profile = require("../../models/profile.model");
 const bcrypt = require("bcrypt"); // authorization hash password
 const jwt = require("jsonwebtoken"); // authorization token
 const { SECRET_KEY } = require("../../config.json"); // secret_key
-// authorization
+// Авторизовать profile
 module.exports = async (req, res) => {
   try {
     const { login, password } = req.body; // get data from frontend
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
     );
     res.json(newToken); // return token
   } catch (e) {
-    console.log(e);
-    res.json("ERROR");
+    // console.log(e);
+    res.json("ERROR controllers/profile/auth.js");
   }
 };

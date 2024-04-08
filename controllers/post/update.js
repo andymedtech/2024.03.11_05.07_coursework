@@ -18,6 +18,6 @@ module.exports = async (req, res) => {
     res.json(postData);
   } catch (e) {
     console.log(e);
-    res.json("ERROR");
+    res.json("ERROR controllers/post/update.js");
   }
 };

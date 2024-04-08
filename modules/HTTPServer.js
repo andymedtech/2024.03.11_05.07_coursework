@@ -4,7 +4,7 @@ const cors = require("cors"); // frontend
 
 const app = express();
 
-// frontend cors для совместимости адресов (добавили библиотеку)
+// frontend cors для совместимости адресов (добавил библиотеку)
 app.use(cors()); // frontend
 
 app.use(express.json()); // расшифровка JSON

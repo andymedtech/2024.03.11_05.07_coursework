@@ -6,9 +6,9 @@
 + [x] Хранение данных в **database** [mongodb://localhost:27017/fsd_05]
 + [x] Collections в database **MongoDB**
 + [x] Применение **CRUD**
-- [ ] Использование паттернов и архитектуры **MVC**
-- [ ] Авторизация по **JWT**
-- [ ] Проверка прав при помощи **middleware**
+- [x] Использование паттернов и архитектуры **MVC**
+- [x] Авторизация по **JWT**
+- [x] Проверка прав при помощи **middleware**
 
 ## Database
 
@@ -293,7 +293,20 @@ http://localhost:8080/api/comment
 [/routes/groups/profile.route.js]
 [/controllers/Profile.controller.js]
 ```
-					
+
++ **Авторизовать profile**
+
+```
+[http://localhost:8080/api/profile/auth]
+[auth]
+[POST]
+```
+
+``` Postman GET Headers
+http://localhost:8080/api/profile
+JWT:
+```
+				
 + **Получить все profile**
 
 ```
