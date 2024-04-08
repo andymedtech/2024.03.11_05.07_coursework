@@ -1,5 +1,6 @@
 // const profile = require("../models/profile.model");
 
+const auth = require("./profile/auth"); // authorization
 const getAll = require("./profile/getAll");
 const getByID = require("./profile/getByID");
 const getShortByID = require("./profile/getShortByID");
@@ -8,6 +9,10 @@ const update = require("./profile/update");
 const remove = require("./profile/remove");
 
 class ProfileController {
+  static async auth(req, res) {
+    // authorization
+    auth(req, res);
+  }
   static async getAll(req, res) {
     getAll(req, res);
   }

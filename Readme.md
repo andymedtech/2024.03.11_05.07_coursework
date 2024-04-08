@@ -468,6 +468,15 @@ http://localhost:8080/api/message
 **Создать profile** 
 create POST 	http://localhost:8080/api/profile
 
+- profile auth
+
+change:		/controllers/Profile.controller.js
+new:			/controllers/profile/auth.js
+change:		/routes/groups/profile.route.js
+new:			/config.json
+
+
+
 ## FRONTEND
 /public/index.html файл для frontend
 http://localhost:8080/index.html
